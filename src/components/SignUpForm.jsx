@@ -9,8 +9,10 @@ export default function SignUpForm({ setIsLoggedIn }) {
         lastName: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+
     })
+    const [accountType, setAccountType] = useState('student');
     const navigat = useNavigate();
     function changeHandler(e) {
         setFormData({
@@ -29,15 +31,21 @@ export default function SignUpForm({ setIsLoggedIn }) {
         const accountData = {
             ...formData
         };
+        const finalData = {
+            ...accountData,
+            accountType
+        }
+
         console.log(accountData);
+        console.log(finalData);
         navigat('/dashboard');
     }
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     return (
         <div>
-            <div className='flex rounded-xl bg-richblack-700 w-full'><button className='text-white bg-richblack-800'>Student</button>
-                <button className='text-white bg-richblack-800'>Instructor</button>
+            <div className='flex rounded-xl bg-richblack-700 w-full'><button onClick={() => setAccountType("student")} className={`text-white bg-richblack-800 py-2 px-5 rounded-full transition-all duration-200 ${accountType === "student" ? "bg-richblack-900 text-white" : "bg-transparent text-richblack-200"}`}>Student</button>
+                <button onClick={() => setAccountType("instructor")} className={`text-white bg-richblack-800 py-2 px-5 rounded-full transition-all duration-200 ${accountType === "student" ? "bg-richblack-900 text-white" : "bg-transparent text-richblack-200"}`}>Instructor</button>
             </div>
             <form action="" onSubmit={submitHandler} className='flex flex-col gap-y-3'>
                 <div className='flex gap-3'>
