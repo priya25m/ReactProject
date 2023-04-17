@@ -44,8 +44,8 @@ export default function SignUpForm({ setIsLoggedIn }) {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     return (
         <div>
-            <div className='flex rounded-xl bg-richblack-700 w-full'><button onClick={() => setAccountType("student")} className={`text-white bg-richblack-800 py-2 px-5 rounded-full transition-all duration-200 ${accountType === "student" ? "bg-richblack-900 text-white" : "bg-transparent text-richblack-200"}`}>Student</button>
-                <button onClick={() => setAccountType("instructor")} className={`text-white bg-richblack-800 py-2 px-5 rounded-full transition-all duration-200 ${accountType === "student" ? "bg-richblack-900 text-white" : "bg-transparent text-richblack-200"}`}>Instructor</button>
+            <div className='flex rounded-xl bg-richblack-700 w-fit py-0.5 px-0.5'><button onClick={() => setAccountType("student")} className={`text-white bg-richblack-800 py-2 px-5 rounded-full transition-all duration-200 ${accountType === "student" ? "bg-richblack-900 text-white" : "bg-transparent text-richblack-200"}`}>Student</button>
+                <button onClick={() => setAccountType("instructor")} className={`text-white bg-richblack-800 py-2 px-5 rounded-full transition-all duration-200 ${accountType === "instructor" ? "bg-richblack-900 text-white" : "bg-transparent text-richblack-200"}`}>Instructor</button>
             </div>
             <form action="" onSubmit={submitHandler} className='flex flex-col gap-y-3'>
                 <div className='flex gap-3'>
