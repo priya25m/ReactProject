@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import logo from '../assets/Logo.svg'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-hot-toast';
 
 export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
-
+    
     return (
         <div className='flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto'>
             <Link to="/">
@@ -14,10 +14,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
                 <ul className='flex gap-x-6 text-white/90'>
                     <li>
                         <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/">About</Link>
-                    </li>
+                    </li>   
                     <li>
                         <Link to="/">Contact Us </Link>
                     </li>
@@ -57,6 +54,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
                 }
 
             </div>
+            
         </div>
     )
 }
