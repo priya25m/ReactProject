@@ -1,4 +1,4 @@
-import i from "../assets/Mediamodifier-Design.svg";
+import i from "../assets/study.jpg";
 
 function Home() {
   return (
